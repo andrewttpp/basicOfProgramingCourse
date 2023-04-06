@@ -65,3 +65,34 @@ void delete_vector(Vector *v) {
     v->size = 0;
     v->capacity = 0;
 }
+
+bool is_empty(Vector v) {
+    return !v.size ? true : false;
+}
+
+bool is_full(Vector v) {
+    return v.size == v.capacity ? true : false;
+}
+
+int get_vector_value(Vector *v, size_t i) {
+    return v->data[i];
+}
+
+void push_back(Vector *v, int x) {
+    if (v->size == v->capacity) {
+        reserve(v, v->capacity * 2);
+    }
+
+    v->data[v->size] = x;
+    v->size++;
+}
+
+void pop_back(Vector *v) {
+    if(is_empty(*v)){
+        fprintf(stderr, "vector is empty");
+        exit(1);
+    }
+
+    v->data = &v->data[v->size - 1];
+    v->size--;
+}

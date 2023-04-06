@@ -35,4 +35,19 @@ void shrink_to_fit(Vector *v);
 // освобождает память, выделенную вектору
 void delete_vector(Vector *v);
 
+// возвращает значение 'истина', если вектор пуст, иначе - 'ложь'
+bool is_empty(Vector v);
+
+// возвращает значение 'истина', если вектор полон, иначе - 'ложь'
+bool is_full(Vector v);
+
+// возвращает i-ый элемент вектора v
+int get_vector_value(Vector *v, size_t i);
+
+// добавляет элемент x в конец вектора v
+void push_back(Vector *v, int x);
+
+// удаляет последний элемент из вектора
+void pop_back(Vector *v);
+
 #endif //LAB_18_VECTOR_H
