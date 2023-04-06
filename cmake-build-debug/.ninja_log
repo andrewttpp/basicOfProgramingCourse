@@ -1,0 +1,5 @@
+# ninja log v5
+1	115	7024963939281070	build.ninja	2fe126293eac0d2e
+1	118	7024945678125573	CMakeFiles/lab_18.dir/main.c.obj	333b53616f727d8
+10	120	7024945678135579	CMakeFiles/lab_18.dir/libs/data_structures/vector/vector.c.obj	5f9f8d791ddb82e9
+120	243	7024945679357262	lab_18.exe	605deff345b0d4c0
