@@ -8,6 +8,7 @@
 
 #ifndef LAB_18_VECTOR_H
 #define LAB_18_VECTOR_H
+#endif //LAB_18_VECTOR_H
 
 
 typedef struct Vector {
@@ -59,4 +60,3 @@ int* back(Vector *v);
 //  возвращает указатель на первый элемент вектора
 int* front(Vector *v);
 
-#endif //LAB_18_VECTOR_H

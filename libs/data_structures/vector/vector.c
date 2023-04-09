@@ -37,18 +37,14 @@ void reserve(Vector *v, size_t new_capacity) {
     if (!new_capacity) {
         v->data = NULL;
         v->size = 0;
-        v->capacity = 0;
     } else {
-        if (v->capacity > new_capacity) {
-            v->data = &v->data[new_capacity - 1];
+        if (v->size > new_capacity)
             v->size = new_capacity;
-        } else {
-            v->data = (int*)realloc(v->data, sizeof(int) * new_capacity);
-            checker_malloc(*v);
-        }
+        v->data = (int*)realloc(v->data, sizeof(int) * new_capacity);
 
-        v->capacity = new_capacity;
+        checker_malloc(*v);
     }
+        v->capacity = new_capacity;
 }
 
 void clear(Vector *v) {
@@ -80,7 +76,8 @@ int get_vector_value(Vector *v, size_t i) {
 
 void push_back(Vector *v, int x) {
     if (v->size == v->capacity) {
-        reserve(v, v->capacity * 2);
+        int new_capacity = v->capacity == 0 ? 1 : v->capacity * 2;
+        reserve(v, new_capacity);
     }
 
     v->data[v->size] = x;
@@ -93,6 +90,5 @@ void pop_back(Vector *v) {
         exit(1);
     }
 
-    v->data = &v->data[v->size - 1];
     v->size--;
 }
